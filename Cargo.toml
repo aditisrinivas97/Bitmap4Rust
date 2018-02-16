@@ -1,0 +1,10 @@
+[package]
+name = "bitmap"
+version = "0.1.0"
+authors = ["aditisrinivas97 <aditisrinivas97@gmail.com>", "avinashshenoy97 <avinashshenoy1997@gmail.com>"]
+license = "MIT"
+repository = "https://www.github.com/aditisrinivas97/bitmap4rust"
+description = "A Rust library for creating and manipulating bitmaps"
+keywords = ["bitmap"]
+
+[dependencies]
