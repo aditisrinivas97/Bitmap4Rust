@@ -1,4 +1,4 @@
-extern crate bitmap as bitmap;
+extern crate bitmap;
 
 #[test]
 fn t_create_bitmap(){
