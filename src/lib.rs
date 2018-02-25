@@ -1,4 +1,4 @@
-
+// Create a bitmap which can represent "bitmap_size" number of blocks 
 pub fn bitmap_create(bitmap_size: &mut u64) -> Vec<u8> {
     if *bitmap_size % 8 != 0 {
         *bitmap_size = (*bitmap_size + 1) / 8;
@@ -13,22 +13,31 @@ pub fn bitmap_create(bitmap_size: &mut u64) -> Vec<u8> {
     return _bitmap;
 }
 
-pub fn clear_bit(bitmap: &mut Vec<u8>, bitno: u64){
+// Clears the bit corresponding to the block number given by "bitno"
+pub fn clear_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32{
+    if bitno > (bitmap.len() as u64) {
+        return -1;
+    }
     let index: u64 = bitno / 8;
     let bit_index: u32 = (bitno % 8) as u32;
     let val: u8 = u8::pow(2, bit_index);
     (* bitmap)[index as usize] = (* bitmap)[index as usize] & !(val);
-    return;
+    return 0;
 }
 
-pub fn set_bit(bitmap: &mut Vec<u8>, bitno: u64){
+// Sets the bit corresponding to the block number given by "bitno"
+pub fn set_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32{
+    if bitno > (bitmap.len() as u64) {
+        return -1;
+    }
     let index: u64 = bitno / 8;
     let bit_index: u32 = (bitno % 8) as u32;
     let val: u8 = u8::pow(2, bit_index);
     (* bitmap)[index as usize] = (* bitmap)[index as usize] | (val);
-    return;
+    return 0;
 }
 
+// Fetches the block number of the first occupied block
 pub fn get_first_set_bit(bitmap: &mut Vec<u8>) -> i64{
     let mut _val: u8 = 0;
     for index in 0..bitmap.len() {
@@ -42,6 +51,7 @@ pub fn get_first_set_bit(bitmap: &mut Vec<u8>) -> i64{
     return -1;
 }
 
+// Fetches the block number of the first free block
 pub fn get_first_unset_bit(bitmap: &mut Vec<u8>) -> i64{
     let mut _val: u8 = 0;
     for index in 0..bitmap.len() {
@@ -55,8 +65,12 @@ pub fn get_first_unset_bit(bitmap: &mut Vec<u8>) -> i64{
     return -1;
 }
 
-pub fn check_bit(bitmap: &mut Vec<u8>, bitno: u64) -> u32 {
+// Checks the bit status of the bit corresponding to the block number given by "bitno"
+pub fn check_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32 {
+    if bitno > (bitmap.len() as u64) {
+        return -1;
+    }
     let index: u64 = bitno / 8;
     let bit_index: u32 = (bitno % 8) as u32;
-    return ((bitmap[index as usize] >> bit_index) as u32) & 1;
+    return (((bitmap[index as usize] >> bit_index) as u32) & 1) as i32;
 }
