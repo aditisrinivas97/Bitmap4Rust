@@ -6,5 +6,6 @@ license = "MIT"
 repository = "https://www.github.com/aditisrinivas97/bitmap4rust"
 description = "A Rust library for creating and manipulating bitmaps"
 keywords = ["bitmap"]
+exclude = ["README.md", ".DS_Store"]
 
 [dependencies]

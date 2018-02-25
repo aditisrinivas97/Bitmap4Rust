@@ -34,13 +34,13 @@ Used to set the bit at `bitno`, i.e, set it to 1. If `bitno` is larger than the 
 
     pub fn get_first_set_bit(bitmap: &mut Vec<u8>) -> i64
 
-Used to get the first bit of `bitmap` that is set to 1.
+Used to get the first bit of `bitmap` that is set to 1. Returns -1 if none are set.
 
 ---
 
     pub fn get_first_unset_bit(bitmap: &mut Vec<u8>) -> i64 
 
-Used to get the first bit of `bitmap` that is set to 0.
+Used to get the first bit of `bitmap` that is set to 0. Returns -1 if all bits are set.
 
 ---
 
