@@ -1,7 +1,7 @@
 // Create a bitmap which can represent "bitmap_size" number of blocks 
 pub fn bitmap_create(bitmap_size: &mut u64) -> Vec<u8> {
     if *bitmap_size % 8 != 0 {
-        *bitmap_size = (*bitmap_size + 1) / 8;
+        *bitmap_size = (*bitmap_size + *bitmap_size % 8) / 8;
     }
     else {
         *bitmap_size = *bitmap_size / 8;
@@ -15,7 +15,7 @@ pub fn bitmap_create(bitmap_size: &mut u64) -> Vec<u8> {
 
 // Clears the bit corresponding to the block number given by "bitno"
 pub fn clear_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32{
-    if bitno > (bitmap.len() as u64) {
+    if bitno > ((bitmap.len() as u64) * 8) {
         return -1;
     }
     let index: u64 = bitno / 8;
@@ -27,7 +27,7 @@ pub fn clear_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32{
 
 // Sets the bit corresponding to the block number given by "bitno"
 pub fn set_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32{
-    if bitno > (bitmap.len() as u64) {
+    if bitno > ((bitmap.len() as u64) * 8) {
         return -1;
     }
     let index: u64 = bitno / 8;
@@ -67,7 +67,7 @@ pub fn get_first_unset_bit(bitmap: &mut Vec<u8>) -> i64{
 
 // Checks the bit status of the bit corresponding to the block number given by "bitno"
 pub fn check_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32 {
-    if bitno > (bitmap.len() as u64) {
+    if bitno > ((bitmap.len() as u64) * 8) {
         return -1;
     }
     let index: u64 = bitno / 8;
