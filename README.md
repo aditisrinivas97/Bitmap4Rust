@@ -28,7 +28,7 @@ Used to clear the bit at `bitno`, i.e, set it to 0. If `bitno` is larger than th
 
     pub fn set_bit(bitmap: &mut Vec<u8>, bitno: u64) -> i32
 
-Used to set the bit at `bitno`, i.e, set it to 1. If `bitno` is larger than the bitmap's size, resulting behaviour is undefined.
+Used to set the bit at `bitno`, i.e, set it to 1. If `bitno` is larger than the bitmap's size, -1 is returned.
 
 ---
 
