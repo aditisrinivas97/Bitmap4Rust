@@ -1,5 +1,5 @@
 [package]
-name = "bitmap"
+name = "bitmap4rust"
 version = "0.1.0"
 authors = ["aditisrinivas97 <aditisrinivas97@gmail.com>"]
 license = "MIT"
