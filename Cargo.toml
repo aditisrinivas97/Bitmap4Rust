@@ -4,9 +4,9 @@ version = "1.0.0"
 authors = ["aditisrinivas97 <aditisrinivas97@gmail.com>"]
 license = "MIT"
 repository = "https://www.github.com/aditisrinivas97/bitmap4rust"
-readme = "https://www.github.com/aditisrinivas97/bitmap4rust/README.md"
+readme = "README.md"
 description = "A Rust library for creating and manipulating bitmaps"
 keywords = ["bitmap"]
-exclude = ["README.md", ".DS_Store"]
+exclude = [".DS_Store"]
 
 [dependencies]
