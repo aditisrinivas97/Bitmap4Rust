@@ -4,6 +4,7 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)]()
 [![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)](https://github.com/aditisrinivas97/Bitmap4Rust/blob/master/LICENSE)
 [![](http://meritbadge.herokuapp.com/bitmap4rust)](https://crates.io/crates/bitmap4rust)
+[![Build Status](https://travis-ci.org/aditisrinivas97/Bitmap4Rust.svg?branch=master)](https://travis-ci.org/aditisrinivas97/Bitmap4Rust)
 
 A Rust library for creating and manipulating Bitmaps.
 
