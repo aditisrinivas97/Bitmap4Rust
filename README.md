@@ -59,7 +59,7 @@ Used to check the value of the bit corresponding to `bitno`.
 ```rust
 
 [dependencies]
-bitmap4rust = "1.0.0"
+bitmap4rust = "1.0.1"
 
 ```
 

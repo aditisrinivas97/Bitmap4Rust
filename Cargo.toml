@@ -1,6 +1,6 @@
 [package]
 name = "bitmap4rust"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["aditisrinivas97 <aditisrinivas97@gmail.com>"]
 license = "MIT"
 repository = "https://www.github.com/aditisrinivas97/bitmap4rust"
